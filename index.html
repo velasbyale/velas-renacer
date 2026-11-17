@@ -62,6 +62,10 @@ nav a:hover{border-color:var(--gold);color:var(--ink)}
 nav a{position:relative}nav a::after{content:"";position:absolute;left:50%;bottom:2px;width:0;height:2px;border-radius:2px;background:#9b9b9b;transform:translateX(-50%);transition:width .35s}
 nav a.on{color:var(--ink)}nav a.on::after{width:50%}
 .note{text-align:center;color:var(--mut);font-size:13px;margin:22px auto 0;max-width:560px}
+.deliv{display:flex;align-items:center;gap:9px;width:fit-content;max-width:min(380px,92%);margin:14px auto 0;padding:8px 16px;border:1.5px solid #b98f4e;border-radius:14px;background:linear-gradient(135deg,color-mix(in srgb,#fde9a8 60%,var(--bg)),color-mix(in srgb,#f7cfd4 40%,var(--bg)));color:var(--ink);font:600 clamp(10px,2.8vw,12px)/1.45 Lora,Georgia,serif;letter-spacing:.1em;text-transform:uppercase;text-align:left;animation:dglow 2.8s ease-in-out infinite}
+.deliv svg{flex:0 0 auto;width:17px;height:17px;color:var(--gold)}
+@keyframes dglow{0%,100%{box-shadow:0 6px 18px -10px rgba(185,143,78,.75)}50%{box-shadow:0 10px 26px -8px rgba(185,143,78,1)}}
+@media (prefers-reduced-motion:reduce){.deliv{animation:none;box-shadow:0 8px 22px -10px rgba(185,143,78,.9)}}
 .grp{margin:44px 0;padding:46px 0 52px;background:linear-gradient(170deg,color-mix(in srgb,var(--g1) var(--t),var(--bg)),color-mix(in srgb,var(--g2) var(--t),var(--bg)));position:relative}
 .grp::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at var(--lx) 0%,rgba(255,255,255,.65),transparent 70%);opacity:calc(var(--t)/100%*0 + 1);pointer-events:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .grp::before{opacity:.1}}
@@ -151,6 +155,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:30px 20px 110px
   <p class="q">“Toda luz nace de lo que se consume: renacer es volver a encenderse.”</p>
   <div class="note">Piezas hechas a mano. Por la alta rotación, confirma la disponibilidad por WhatsApp antes de pagar.</div>
   <a class="wa" href="https://wa.me/573208054657?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20velas" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+  <p class="deliv"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Pedidos disponibles únicamente en Bogotá, Colombia</span></p>
 </header>
 <nav><div class="w" id="nav"><a href="#ramos">Ramos de luz</a><a href="#band">Bandejas del bosque</a><a href="#asc">Copos Ascua</a><a href="#sol">Copos Sol</a><a href="#mus">Copos Musgo</a><a href="#duo">Dúos</a><a href="#trio">Tríos</a></div></nav>
 <noscript><div class="note">Para agregar productos al carrito activa JavaScript en tu navegador.</div></noscript>
