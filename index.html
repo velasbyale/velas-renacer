@@ -120,6 +120,7 @@ nav a.on{color:var(--ink)}nav a.on::after{width:50%}
 .th .t{flex:0 0 58px;width:58px;height:58px;background-size:cover;background-position:center;border-radius:8px;border:2px solid transparent;cursor:pointer}
 .th .t.on{border-color:var(--gold)}
 .sh h2{font-size:26px}
+.fchip{margin:14px 0 0;padding:12px 14px;border:1px solid color-mix(in srgb,var(--gold) 45%,transparent);border-left:3px solid var(--gold);border-radius:10px;background:color-mix(in srgb,var(--gold) 9%,var(--bg));font:italic 16px/1.7 "Cormorant Garamond",serif;color:var(--ink)}
 .wa{display:inline-block;margin-top:16px;padding:11px 26px;border-radius:99px;background:#25d366;color:#fff;text-decoration:none;font-size:14px;letter-spacing:.05em}
 .opt{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
 .opt button{border:1px solid var(--ln);border-radius:12px;padding:8px 14px;font-size:14px}
@@ -180,23 +181,23 @@ var G=[
 {k:"duo",t:"Dúos",l:"Dos formas, un mismo renacer.",c:"g-duo"},
 {k:"trio",t:"Tríos",l:"Tres llamas, un mismo comienzo.",c:"g-trio"}];
 var P=[
-{id:"r1",g:"ramos",n:"Bouquet de velas navideño oso farol",p:25000,i:["06"],d:"Bouquet de velas navideñas con un farol en forma de oso entre bayas rojas y detalles dorados."},
-{id:"r2",g:"ramos",n:"Bouquet de velas navideño venado farol",p:25000,i:["04"],d:"Bouquet de velas navideñas con un farol en forma de ciervo, flores secas y varillas doradas."},
+{id:"r1",g:"ramos",n:"Bouquet de velas navideño oso farol",p:25000,i:["06"],d:"Un farol de oso resguarda la llama entre bayas rojas y detalles dorados, como un refugio de invierno. Cuando la cera se consume, la pieza no se apaga del todo: renace como candelabro.",f:"✦ Bouquet de doble función: una vez terminadas las velas, la base se puede utilizar como candelabro para decoraciones."},
+{id:"r2",g:"ramos",n:"Bouquet de velas navideño venado farol",p:25000,i:["04"],d:"Un farol de venado sostiene la luz entre flores secas y varillas doradas, como un bosque que aguarda su aurora. Al terminar la cera, la base vuelve a empezar como candelabro.",f:"✦ Bouquet de doble función: una vez terminadas las velas, la base se puede utilizar como candelabro para decoraciones."},
 {id:"r3",g:"ramos",n:"Ramo encantador del gnomo",p:25000,i:["01"],d:"Encantador ramo de velas navideñas con flores amarillas, peonías de cera y un gnomo de gorro rojo."},
 {id:"b4",g:"band",n:"Conjunto del gnomo y el osito",p:20000,i:["05"],d:"Conjunto decorativo sobre bandeja ovalada con gnomo, osito y detalles festivos."},
 {id:"b5",g:"band",n:"Conjunto del ciervo y el pino",p:20000,i:["03"],d:"Conjunto decorativo con temática de ciervos: un reno dormido, un pino y una flor roja."},
 {id:"b6",g:"band",n:"Conjunto del osito escondido",p:20000,i:["02"],d:"Conjunto decorativo con temática de osos que incluye un oso oculto entre el pino y el regalo."},
-{id:"a1",g:"asc",alt:"a2",n:"Copo Ascua Cristal",p:6000,i:["07","08"],d:"Portavelas en forma de copo de puntas definidas, en rojo intenso con borde dorado. Incluye vela."},
-{id:"a2",g:"asc",hid:1,n:"Copo Ascua Escarcha",p:6000,i:["09","17"],d:"Portavelas en forma de copo de ramas finas, en rojo intenso con borde dorado. Incluye vela."},
-{id:"s1",g:"sol",alt:"s2",n:"Copo Sol Cristal",p:6000,i:["10","11"],d:"Portavelas en forma de copo de puntas definidas, en amarillo dorado. Incluye vela."},
-{id:"s2",g:"sol",hid:1,n:"Copo Sol Escarcha",p:6000,i:["12","13"],d:"Portavelas en forma de copo de ramas finas, en amarillo dorado. Incluye vela."},
-{id:"m1",g:"mus",alt:"m2",n:"Copo Musgo Cristal",p:6000,i:["14","15"],d:"Portavelas en forma de copo de puntas definidas, en verde musgo. Incluye vela."},
-{id:"m2",g:"mus",hid:1,n:"Copo Musgo Escarcha",p:6000,i:["16","21"],d:"Portavelas en forma de copo de ramas finas, en verde musgo. Incluye vela."},
-{id:"d1",g:"duo",dd:1,k:"asc",n:"Dúo Ascua",p:10000,i:["07","09","08","17"],d:"Dos copos rojos de formas distintas: uno Cristal y uno Escarcha. Incluye velas."},
-{id:"d2",g:"duo",dd:1,k:"sol",n:"Dúo Sol",p:10000,i:["10","12","11","13"],d:"Dos copos amarillos de formas distintas: uno Cristal y uno Escarcha. Incluye velas."},
-{id:"d3",g:"duo",dd:1,k:"mus",n:"Dúo Musgo",p:10000,i:["14","16","15","21"],d:"Dos copos verdes de formas distintas: uno Cristal y uno Escarcha. Incluye velas."},
-{id:"p4",g:"trio",n:"Trío Cristal",p:15000,i:["19"],d:"Tres copos de puntas definidas, uno rojo, uno dorado y uno verde, para encender el renacer en familia."},
-{id:"p5",g:"trio",n:"Trío Escarcha",p:15000,i:["20"],d:"Tres copos de ramas delicadas como la escarcha, en rojo, dorado y verde. Un diseño distinto al Trío Cristal."}];
+{id:"a1",g:"asc",alt:"a2",n:"Copo Ascua Cristal",p:6000,i:["07","08"],d:"Copo de puntas definidas en rojo intenso con borde dorado: la brasa que se niega a apagarse del todo. Incluye vela.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"},
+{id:"a2",g:"asc",hid:1,n:"Copo Ascua Escarcha",p:6000,i:["09","17"],d:"Copo de ramas finas en rojo intenso con borde dorado: la escarcha que guarda el calor del ascua. Incluye vela.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"},
+{id:"s1",g:"sol",alt:"s2",n:"Copo Sol Cristal",p:6000,i:["10","11"],d:"Copo de puntas definidas en amarillo dorado: un sol pequeño que vuelve a nacer en cada encendido. Incluye vela.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"},
+{id:"s2",g:"sol",hid:1,n:"Copo Sol Escarcha",p:6000,i:["12","13"],d:"Copo de ramas finas en amarillo dorado: la primera luz de la mañana posada sobre el yeso. Incluye vela.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"},
+{id:"m1",g:"mus",alt:"m2",n:"Copo Musgo Cristal",p:6000,i:["14","15"],d:"Copo de puntas definidas en verde musgo: la vida que despierta donde parecía dormida. Incluye vela.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"},
+{id:"m2",g:"mus",hid:1,n:"Copo Musgo Escarcha",p:6000,i:["16","21"],d:"Copo de ramas finas en verde musgo: un brote que se abre paso entre el hielo. Incluye vela.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"},
+{id:"d1",g:"duo",dd:1,k:"asc",n:"Dúo Ascua",p:10000,i:["07","09","08","17"],d:"Dos copos rojos, uno Cristal y uno Escarcha: dos formas de arder y de renacer. Incluye velas.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"},
+{id:"d2",g:"duo",dd:1,k:"sol",n:"Dúo Sol",p:10000,i:["10","12","11","13"],d:"Dos copos amarillos, uno Cristal y uno Escarcha: dos maneras de amanecer. Incluye velas.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"},
+{id:"d3",g:"duo",dd:1,k:"mus",n:"Dúo Musgo",p:10000,i:["14","16","15","21"],d:"Dos copos verdes, uno Cristal y uno Escarcha: dos brotes de una misma raíz. Incluye velas.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"},
+{id:"p4",g:"trio",n:"Trío Cristal",p:15000,i:["19"],d:"Tres copos de puntas definidas en rojo, dorado y verde: tres llamas que comienzan juntas y se renuevan juntas. Incluye velas.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"},
+{id:"p5",g:"trio",n:"Trío Escarcha",p:15000,i:["20"],d:"Tres copos de ramas delicadas como la escarcha, en rojo, dorado y verde: un diseño distinto al Trío Cristal y el mismo ritual de renacer. Incluye velas.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"}];
 var MAT={"g-ramos":"#eef3e8","g-band":"#fbe9ea","g-asc":"#fde7df","g-sol":"#fdf2c6","g-mus":"#e3edd8","g-trio":"#fffaf0","g-duo":"#fbe9dc"};
 var $=function(i){return document.getElementById(i)};
 var cart={};try{cart=JSON.parse(localStorage.getItem("lr")||"{}")||{}}catch(e){}
@@ -242,7 +243,7 @@ document.addEventListener("keydown",function(e){var ov=document.querySelector(".
 function det(id){var p=fp(id),g=fg(p.g),q=1;
   var h='<button type="button" class="x" id="x1" aria-label="Cerrar">✕</button><div class="kick" style="color:var(--gold)">'+g.t+'</div><h2>'+p.n+'</h2><div class="main '+g.c+'" style="--mat:'+MAT[g.c]+'">'+bigIm(p.i[0],p.n)+'</div>';
   if(p.i.length>1)h+='<div class="th">'+p.i.map(function(k,j){return '<button type="button" data-j="'+j+'" data-k="'+k+'" class="t i'+k+(j?"":" on")+'" aria-label="Foto '+(j+1)+' de '+p.i.length+'" aria-pressed="'+(j?"false":"true")+'"></button>'}).join("")+'</div>';
-  h+='<p>'+p.d+'</p><div class="serif" id="dp" style="font-size:26px" aria-live="polite" aria-atomic="true">'+m(p.p)+'</div><div id="du" style="font-size:13px;color:var(--mut);min-height:18px"></div>';
+  h+='<p>'+p.d+'</p>'+(p.f?'<div class="fchip">'+p.f+'</div>':'')+'<div class="serif" id="dp" style="font-size:26px" aria-live="polite" aria-atomic="true">'+m(p.p)+'</div><div id="du" style="font-size:13px;color:var(--mut);min-height:18px"></div>';
   h+='<span class="qty"><button type="button" id="mn" aria-label="Quitar una unidad">−</button><b id="qn">1</b><button type="button" id="pl" aria-label="Agregar una unidad">+</button></span>';
   h+='<button type="button" class="full" id="ad"'+(ag(p.id)?" disabled":"")+'>'+(ag(p.id)?"Agotado · consulta disponibilidad":"Agregar a mi pedido")+'</button>';
   if(ag(p.id))h+='<p class="hintn">Este modelo está agotado por ahora. Escríbenos por WhatsApp para conocer la próxima reposición.</p>';
