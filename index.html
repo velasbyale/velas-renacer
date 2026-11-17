@@ -237,15 +237,14 @@ document.addEventListener("keydown",function(e){var ov=document.querySelector(".
 function det(id){var p=fp(id),g=fg(p.g),q=1;
   var h='<button type="button" class="x" id="x1" aria-label="Cerrar">✕</button><div class="kick" style="color:var(--gold)">'+g.t+'</div><h2>'+p.n+'</h2><div class="main '+g.c+'" style="--mat:'+MAT[g.c]+'">'+bigIm(p.i[0],p.n)+'</div>';
   if(p.i.length>1)h+='<div class="th">'+p.i.map(function(k,j){return '<button type="button" data-j="'+j+'" data-k="'+k+'" class="t i'+k+(j?"":" on")+'" aria-label="Foto '+(j+1)+' de '+p.i.length+'" aria-pressed="'+(j?"false":"true")+'"></button>'}).join("")+'</div>';
-  h+='<p>'+p.d+'</p><div class="serif" style="font-size:26px">'+m(p.p)+'</div>';
+  h+='<p>'+p.d+'</p><div class="serif" id="dp" style="font-size:26px" aria-live="polite" aria-atomic="true">'+m(p.p)+'</div><div id="du" style="font-size:13px;color:var(--mut);min-height:18px"></div>';
   h+='<span class="qty"><button type="button" id="mn" aria-label="Quitar una unidad">−</button><b id="qn">1</b><button type="button" id="pl" aria-label="Agregar una unidad">+</button></span>';
   h+='<button type="button" class="full" id="ad"'+(ag(p.id)?" disabled":"")+'>'+(ag(p.id)?"Agotado · consulta disponibilidad":"Agregar a mi pedido")+'</button>';
   if(ag(p.id))h+='<p class="hintn">Este modelo está agotado por ahora. Escríbenos por WhatsApp para conocer la próxima reposición.</p>';
   $("s1").innerHTML=h;
   $("s1").onclick=function(e){var t=e.target;
     if(t.dataset&&t.dataset.j!=null&&t.dataset.j!==""){setBig(t.dataset.k);Array.prototype.forEach.call($("s1").querySelectorAll(".th .t"),function(b){b.classList.toggle("on",b===t);b.setAttribute("aria-pressed",b===t?"true":"false")})}
-    if(t.id=="mn"){q=Math.max(1,q-1);$("qn").textContent=q}
-    if(t.id=="pl"){q++;$("qn").textContent=q}
+    if(t.id=="mn"||t.id=="pl"){q=t.id=="pl"?q+1:Math.max(1,q-1);$("qn").textContent=q;$("dp").textContent=m(p.p*q);$("du").textContent=q>1?m(p.p)+" c/u":""}
     if(t.id=="x1"){closeOv("o1");return}
     if(t.id=="ad"&&!t.disabled){add(p.id,0,q);closeOv("o1");setTimeout(function(){say(p.n+" × "+q+" agregado a tu pedido")},100)}};
   openOv("o1")}
@@ -255,7 +254,7 @@ function drawCart(){
   var af=document.activeElement,fk=af&&(af.dataset.u||af.dataset.d||"");
   var L=lines(),h='<button type="button" class="x" id="x2" aria-label="Cerrar">✕</button><h2>Mi pedido</h2>';
   if(!L.length){$("s2").innerHTML=h+'<p style="color:var(--mut);text-align:center;padding:30px 0">Aún no has agregado velas.</p>';$("x2").onclick=function(){closeOv("o2")};$("x2").focus();return}
-  var tot=0;L.forEach(function(l){tot+=l.u*l.q;h+='<div class="ln"><div class="t i'+l.p.i[0]+'"></div><div class="n">'+l.p.n+'<br><small style="color:var(--mut)">'+m(l.u)+'</small></div><span class="qty"><button type="button" data-d="'+l.k+'" aria-label="Quitar uno de '+esc(l.p.n)+'">−</button><b>'+l.q+'</b><button type="button" data-u="'+l.k+'" aria-label="Agregar uno de '+esc(l.p.n)+'">+</button></span></div>'});
+  var tot=0;L.forEach(function(l){tot+=l.u*l.q;h+='<div class="ln"><div class="t i'+l.p.i[0]+'"></div><div class="n">'+l.p.n+'<br><small style="color:var(--mut)">'+(l.q>1?l.q+' × '+m(l.u)+' = <b style="color:var(--ink);font-weight:500">'+m(l.u*l.q)+'</b>':m(l.u)+' c/u')+'</small></div><span class="qty"><button type="button" data-d="'+l.k+'" aria-label="Quitar uno de '+esc(l.p.n)+'">−</button><b>'+l.q+'</b><button type="button" data-u="'+l.k+'" aria-label="Agregar uno de '+esc(l.p.n)+'">+</button></span></div>'});
   h+='<div class="tot"><span>Total</span><span>'+m(tot)+'</span></div>';
   h+='<input class="fld" id="nm" placeholder="Tu nombre" aria-label="Tu nombre" autocomplete="name" maxlength="80" value="'+esc(nm)+'">';
   h+='<input class="fld" id="dr" placeholder="Dirección de entrega o “recojo en tienda”" aria-label="Dirección de entrega o recojo en tienda" autocomplete="street-address" maxlength="160" value="'+esc(dr)+'">';
