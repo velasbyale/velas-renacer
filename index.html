@@ -32,6 +32,10 @@ h1,h2,h3,.serif{font-family:"Playfair Display",Georgia,serif;font-weight:500;mar
 button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .w{max-width:1040px;margin:0 auto;padding:0 20px}
 .hero{text-align:center;padding:64px 0 34px;position:relative}
+.logo{position:absolute;left:0;top:0;width:clamp(64px,15vw,104px);height:auto;border-radius:22%;border:1px solid color-mix(in srgb,var(--gold) 45%,transparent);box-shadow:0 12px 26px -16px rgba(58,47,42,.55);background:var(--sf)}
+.ig{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:9px 18px;border:1px solid color-mix(in srgb,var(--gold) 65%,transparent);border-radius:99px;background:color-mix(in srgb,var(--gold) 8%,var(--bg));color:var(--ink);text-decoration:none;font-size:13.5px;letter-spacing:.05em}
+.ig:hover{background:color-mix(in srgb,var(--gold) 16%,var(--bg));border-color:var(--gold)}
+.ig svg{flex:0 0 auto;width:16px;height:16px;color:var(--gold)}
 .hero::before{content:"";position:absolute;left:50%;top:6px;width:min(560px,90%);height:300px;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 40%,rgba(255,214,120,.55),transparent 68%);animation:glow 5s ease-in-out infinite;pointer-events:none;z-index:-1}
 @keyframes glow{0%,100%{opacity:.55;transform:translateX(-50%) scale(.95)}50%{opacity:1;transform:translateX(-50%) scale(1.06)}}
 .fx{position:fixed;inset:0;pointer-events:none;z-index:5;overflow:hidden}
@@ -155,6 +159,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:30px 20px 110px
 <a class="skip" href="#main">Saltar al catálogo</a>
 <div class="fx" id="fx" aria-hidden="true"></div>
 <header class="hero w">
+  <img class="logo" src="img/logo.jpg" alt="Logo de Velas Renacer By Ale" width="104" height="102" decoding="async">
   <div class="kick">Velas artesanales</div>
   <h1 id="brand">Velas Renacer By Ale</h1>
   <div class="orn"></div>
@@ -162,6 +167,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:30px 20px 110px
   <div class="note">Piezas hechas a mano. Por la alta rotación, confirma la disponibilidad por WhatsApp antes de pagar.</div>
   <a class="wa" href="https://wa.me/573208054657?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20velas" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
   <p class="deliv"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Pedidos disponibles únicamente en Bogotá, Colombia</span></p>
+  <a class="ig" href="https://www.instagram.com/velasrenacerbyale/" target="_blank" rel="noopener" aria-label="Instagram de Velas Renacer By Ale: @velasrenacerbyale"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg><span>@velasrenacerbyale</span></a>
 </header>
 <nav><div class="w" id="nav"><a href="#ramos">Ramos de luz</a><a href="#band">Bandejas del bosque</a><a href="#asc">Copos Ascua</a><a href="#sol">Copos Sol</a><a href="#mus">Copos Musgo</a><a href="#duo">Dúos</a><a href="#trio">Tríos</a></div></nav>
 <noscript><div class="note">Para agregar productos al carrito activa JavaScript en tu navegador.</div></noscript>
