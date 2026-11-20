@@ -315,7 +315,7 @@ nav a.on{color:var(--ink)}nav a.on::after{width:50%}
 .rv{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{transform:none;transition:opacity .6s ease}}
-.smk{position:absolute;inset:-10% -8%;z-index:4;pointer-events:none;opacity:0;visibility:hidden;background:radial-gradient(46% 36% at 50% 70%,rgba(146,136,124,.34),transparent 72%),radial-gradient(32% 26% at 26% 52%,rgba(172,158,140,.28),transparent 74%),radial-gradient(36% 30% at 72% 46%,rgba(200,172,128,.20),transparent 74%)}
+.smk{position:absolute;inset:-10% 0;z-index:4;pointer-events:none;opacity:0;visibility:hidden;background:radial-gradient(46% 36% at 50% 70%,rgba(146,136,124,.34),transparent 72%),radial-gradient(32% 26% at 26% 52%,rgba(172,158,140,.28),transparent 74%),radial-gradient(36% 30% at 72% 46%,rgba(200,172,128,.20),transparent 74%)}
 .smk::before,.smk::after{content:"";position:absolute;border-radius:50%}
 .smk::before{inset:20% 10% 6% 20%;background:radial-gradient(circle at 50% 60%,rgba(255,252,246,.55),transparent 70%)}
 .smk::after{inset:6% 20% 24% 8%;background:radial-gradient(circle at 45% 50%,rgba(236,226,210,.5),transparent 68%)}
@@ -615,37 +615,46 @@ $("main").addEventListener("keydown",function(e){if(e.key!=="Enter"&&e.key!==" "
       }else{
         if(sm.style.visibility!=="visible")sm.style.visibility="visible";
         sm.style.opacity=String((s*s*.82).toFixed(3));
-        sm.style.transform="translate3d(0,"+(20*s*dir).toFixed(1)+"px,0) scale("+(1+.28*s).toFixed(3)+")";
+        sm.style.transform="translate3d(0,"+(20*s*dir).toFixed(1)+"px,0)";
       }
     }
   }
-  var queued=false;
-  function update(){
-    queued=false;
+  var raf=0;
+  function step(snap){
     vh=window.innerHeight||document.documentElement.clientHeight;
     var sy=window.pageYOffset||document.documentElement.scrollTop||0;
-    var lo=vh+200;
+    var lo=vh+200,moving=false;
     for(var i=0;i<cards.length;i++){
-      var c=cards[i],h=hs[i],top=tops[i]-sy;
+      var c=cards[i],h=hs[i],top=tops[i]-sy,tp,td;
       if(top>-h-200&&top<lo){
         var f=(Math.min(top+h,vh)-Math.max(top,0))/h;
         f=f<0?0:f>1?1:f;
         var q=Math.min(1,f/c._thr);
-        apply(c,q<=0?0:q>=1?1:q*q*(3-2*q),(top+h/2)>vh/2?1:-1);
+        tp=q<=0?0:q>=1?1:q*q*(3-2*q);
+        td=(top+h/2)>vh/2?1:-1;
       }else{
-        apply(c,0,top<0?-1:1);
+        tp=0;td=top<0?-1:1;
       }
+      if(c._cp===undefined||snap){c._cp=tp}
+      else{c._cp+=(tp-c._cp)*.3}
+      if(Math.abs(tp-c._cp)>.003)moving=true;else c._cp=tp;
+      apply(c,c._cp,td);
     }
     if(heads.length)checkHeads();
+    return moving;
   }
-  function queue(){if(!queued){queued=true;requestAnimationFrame(update)}}
+  function frame(){
+    raf=0;
+    if(step(false))raf=requestAnimationFrame(frame);
+  }
+  function queue(){if(!raf)raf=requestAnimationFrame(frame)}
   var rt=0;
-  function remeasure(){measure();update()}
+  function remeasure(){measure();step(true)}
   var started=false;
   function start(){
     if(started)return;started=true;
     measure();
-    update();
+    step(true);
     addEventListener("scroll",queue,{passive:true});
     addEventListener("resize",function(){if(!rt)rt=setTimeout(function(){rt=0;remeasure()},250)});
     addEventListener("load",remeasure);
