@@ -411,8 +411,10 @@ html.av-lock{overflow:hidden!important}
 .av-orn::before{background:linear-gradient(90deg,transparent,var(--gold))}
 .av-orn::after{background:linear-gradient(90deg,var(--gold),transparent)}
 .av-t{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:clamp(27px,7vw,32px);letter-spacing:.02em;color:var(--ink)}
-.av-d{margin:12px 0 22px;font-size:15.5px;line-height:1.75;color:var(--ink)}
+.av-d{margin:12px 0 12px;font-size:15.5px;line-height:1.75;color:var(--ink)}
 .av-d b{color:var(--gold);font-weight:600}
+.av-sub{display:block;margin:0 0 22px;padding:11px 14px;border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);border-left:3px solid var(--gold);border-radius:12px;background:color-mix(in srgb,var(--gold) 10%,var(--bg));font:italic 500 14px/1.55 "Cormorant Garamond",Georgia,serif;color:var(--ink);text-align:left}
+.av-sub span{color:var(--gold);font-style:normal;font-size:11px;margin-right:7px;vertical-align:1px}
 .av-b{display:block;width:100%;padding:15px 22px;border-radius:99px;background:var(--ink);color:var(--bg);font:500 14px/1 Lora,Georgia,serif;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 14px 30px -14px rgba(58,47,42,.6);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease,box-shadow .25s ease}
 .av-b:hover{transform:translateY(-1px);box-shadow:0 18px 36px -16px rgba(58,47,42,.65)}
 .av-b:active{transform:translateY(0) scale(.99)}
@@ -455,6 +457,7 @@ html.av-lock{overflow:hidden!important}
     <div class="av-orn" aria-hidden="true">✦</div>
     <h2 class="av-t" id="av-t">Aviso</h2>
     <p class="av-d" id="av-d">Todos los productos que aparecen en este sitio web se fabrican bajo pedido para hacer frente a la rápida rotación del mercado. Por favor, realice su pedido con <b>al menos 4 días de antelación</b>.</p>
+    <p class="av-sub"><span aria-hidden="true">✦</span>Las bases donde se muestran los productos no se incluyen; solo se muestran dentro de la página para su exhibición.</p>
     <button class="av-b" id="avb" type="button">Entendido</button>
   </div>
 </div>
