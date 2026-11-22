@@ -759,6 +759,8 @@ upd();
 (function(){
   var av=document.getElementById("av"),btn=document.getElementById("avb"),card=av?av.querySelector(".av-c"):null,html=document.documentElement;
   if(!av||!btn||!card)return;
+  var KEY="renacerAvisoSeen";
+  try{if(sessionStorage.getItem(KEY))return}catch(e){}
   var tReady=0,shown=false,closed=false,readyBtn=false,mo=null;
   function lock(on){if(on)html.classList.add("av-lock");else html.classList.remove("av-lock")}
   function trap(e){
@@ -803,6 +805,7 @@ upd();
   }
   btn.addEventListener("click",function(){
     if(closed||!readyBtn)return;closed=true;
+    try{sessionStorage.setItem(KEY,"1")}catch(e){}
     clearTimeout(tReady);
     av.classList.remove("on");av.classList.add("out");
     lock(false);
