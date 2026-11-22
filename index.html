@@ -473,7 +473,7 @@ var G=[
 {k:"sol",t:"Copos Sol",l:"Después de cada noche, la luz vuelve a empezar.",c:"g-sol"},
 {k:"mus",t:"Copos Musgo",l:"Lo que parecía dormido vuelve a brotar.",c:"g-mus"},
 {k:"duo",t:"Dúos",l:"Dos formas, un mismo renacer.",c:"g-duo"},
-{k:"trio",t:"Tríos",l:"Tres llamas, un mismo comienzo.",c:"g-trio"},{k:"caj",t:"Cajas florales",l:"Flores de cera que viajan bien guardadas.",c:"g-trio"},{k:"vas",t:"Vasos y corazones",l:"Un vaso transparente, una llama y un corazón.",c:"g-trio"},{k:"flo",t:"Flores de cera",l:"Flores moldeadas que vuelven a encenderse.",c:"g-trio"},{k:"cor",t:"Corazones de cera",l:"Corazones que guardan flores y una llama.",c:"g-trio"},{k:"flr",t:"Florecitas",l:"Pequeñas flores de cera, una llama breve.",c:"g-trio"},{k:"bol",t:"Ramos y bolsitas",l:"Flores de cera listas para regalar.",c:"g-trio"},{k:"com",t:"Composiciones",l:"Varias flores en una misma mesa.",c:"g-trio"}];
+{k:"trio",t:"Tríos",l:"Tres llamas, un mismo comienzo.",c:"g-trio"},{k:"vas",t:"Vasos",l:"Vaso transparente, una vela y un corazón.",c:"g-trio"},{k:"lot",t:"Lotos",l:"Pétalos de cera que se abren a la llama.",c:"g-trio"},{k:"mat",t:"Lotos en matera",l:"El loto descansa en su matera.",c:"g-trio"},{k:"dal",t:"Dalias y crisantemos",l:"Flores de pétalos finos y una sola llama.",c:"g-trio"},{k:"duf",t:"Dúos de flores",l:"Dos flores, dos llamas, un mismo regalo.",c:"g-trio"},{k:"cor",t:"Corazones",l:"Corazones de cera que guardan una flor.",c:"g-trio"},{k:"pla",t:"Platos de florecitas",l:"Florecitas pequeñas reunidas en un plato.",c:"g-trio"},{k:"med",t:"Medallones",l:"Medallones florales en su vasito.",c:"g-trio"}];
 var P=[
 {id:"r1",g:"ramos",n:"Bouquet de velas navideño oso farol",p:25000,i:["06"],d:"Un farol de oso resguarda la llama entre bayas rojas y detalles dorados, como un refugio de invierno. Cuando la cera se consume, la pieza no se apaga del todo: renace como candelabro.",f:"✦ Bouquet de doble función: una vez terminadas las velas, la base se puede utilizar como candelabro para decoraciones."},
 {id:"r2",g:"ramos",n:"Bouquet de velas navideño venado farol",p:25000,i:["04"],d:"Un farol de venado sostiene la luz entre flores secas y varillas doradas, como un bosque que aguarda su aurora. Al terminar la cera, la base vuelve a empezar como candelabro.",f:"✦ Bouquet de doble función: una vez terminadas las velas, la base se puede utilizar como candelabro para decoraciones."},
@@ -496,40 +496,34 @@ var P=[
 {id:"d3",g:"duo",dd:1,k:"mus",n:"Dúo Musgo",p:10000,i:["14","16","15","21"],d:"Dos copos verdes, uno Cristal y uno Escarcha: dos brotes de una misma raíz. Incluye velas.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"},
 {id:"p4",g:"trio",n:"Trío Cristal",p:15000,i:["19"],d:"Tres copos de puntas definidas en rojo, dorado y verde: tres llamas que comienzan juntas y se renuevan juntas. Incluye velas.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"},
 {id:"p5",g:"trio",n:"Trío Escarcha",p:15000,i:["20"],d:"Tres copos de ramas delicadas como la escarcha, en rojo, dorado y verde: un diseño distinto al Trío Cristal y el mismo ritual de renacer. Incluye velas.",f:"✦ Vela del centro intercambiable<br>✦ Base en forma de copo hecha en yeso para su reutilización"}
-,{id:"nv01",g:"caj",np:1,n:"Caja floral con ventana",i:["nv01"],d:"Caja de cartón con ventana y velas florales de cera."}
-,{id:"nv02",g:"caj",np:1,n:"Torre de cajas florales",i:["nv02"],d:"Caja de cartón con ventana y velas florales de cera."}
-,{id:"nv03",g:"caj",np:1,n:"Tres cajas florales abiertas",i:["nv03"],d:"Caja de cartón con ventana y velas florales de cera."}
-,{id:"nv04",g:"caj",np:1,n:"Cajas florales en fila",i:["nv04"],d:"Caja de cartón con ventana y velas florales de cera."}
-,{id:"nv05",g:"vas",np:1,n:"Vasos con corazón azul",i:["nv05"],d:"Vaso transparente con vela de cera y detalle de corazón."}
-,{id:"nv06",g:"vas",np:1,n:"Trío de vasos florales",i:["nv06"],d:"Vaso transparente con vela de cera y detalle de corazón."}
-,{id:"nv07",g:"vas",np:1,n:"Vasos con flor roja",i:["nv07"],d:"Vaso transparente con vela de cera y detalle de corazón."}
-,{id:"nv08",g:"vas",np:1,n:"Vaso con corazón",i:["nv08"],d:"Vaso transparente con vela de cera y detalle de corazón."}
-,{id:"nv09",g:"vas",np:1,n:"Dúo de vasos con corazón",i:["nv09"],d:"Vaso transparente con vela de cera y detalle de corazón."}
-,{id:"nv10",g:"vas",np:1,n:"Vasos de corazones",i:["nv10"],d:"Vaso transparente con vela de cera y detalle de corazón."}
-,{id:"nv11",g:"flo",np:1,n:"Ramo de peonías de cera",i:["nv11"],d:"Vela de cera moldeada en forma de flor, sobre base de exhibición."}
-,{id:"nv12",g:"flo",np:1,n:"Loto amarillo",i:["nv12"],d:"Vela de cera moldeada en forma de flor, sobre base de exhibición."}
-,{id:"nv13",g:"flo",np:1,n:"Loto verde",i:["nv13"],d:"Vela de cera moldeada en forma de flor, sobre base de exhibición."}
-,{id:"nv14",g:"flo",np:1,n:"Flor roja abierta",i:["nv14"],d:"Vela de cera moldeada en forma de flor, sobre base de exhibición."}
-,{id:"nv15",g:"flo",np:1,n:"Dalia roja",i:["nv15"],d:"Vela de cera moldeada en forma de flor, sobre base de exhibición."}
-,{id:"nv16",g:"flo",np:1,n:"Ramo de flores de cera",i:["nv16"],d:"Vela de cera moldeada en forma de flor, sobre base de exhibición."}
-,{id:"nv17",g:"flo",np:1,n:"Margaritas blanca y verde",i:["nv17"],d:"Vela de cera moldeada en forma de flor, sobre base de exhibición."}
-,{id:"nv18",g:"flo",np:1,n:"Dúo lavanda y crema",i:["nv18"],d:"Vela de cera moldeada en forma de flor, sobre base de exhibición."}
-,{id:"nv19",g:"flo",np:1,n:"Dúo rojo y amarillo",i:["nv19"],d:"Vela de cera moldeada en forma de flor, sobre base de exhibición."}
-,{id:"nv20",g:"flo",np:1,n:"Dalia roja en base",i:["nv20"],d:"Vela de cera moldeada en forma de flor, sobre base de exhibición."}
-,{id:"nv21",g:"flo",np:1,n:"Loto amarillo en base",i:["nv21"],d:"Vela de cera moldeada en forma de flor, sobre base de exhibición."}
-,{id:"nv22",g:"cor",np:1,n:"Tres corazones florales",i:["nv22"],d:"Vela de cera en forma de corazón con flores."}
-,{id:"nv23",g:"cor",np:1,n:"Corazón con flor morada",i:["nv23"],d:"Vela de cera en forma de corazón con flores."}
-,{id:"nv24",g:"cor",np:1,n:"Dúo de corazones florales",i:["nv24"],d:"Vela de cera en forma de corazón con flores."}
-,{id:"nv25",g:"flr",np:1,n:"Seis florecitas de cera",i:["nv25"],d:"Pequeña vela de cera en forma de flor."}
-,{id:"nv26",g:"flr",np:1,n:"Tres platos de florecitas",i:["nv26"],d:"Pequeña vela de cera en forma de flor."}
-,{id:"nv27",g:"flr",np:1,n:"Medallones rojo, amarillo y blanco",i:["nv27"],d:"Pequeña vela de cera en forma de flor."}
-,{id:"nv28",g:"flr",np:1,n:"Medallones rojo, blanco y rojo",i:["nv28"],d:"Pequeña vela de cera en forma de flor."}
-,{id:"nv29",g:"flr",np:1,n:"Medallones amarillo, rojo y morado",i:["nv29"],d:"Pequeña vela de cera en forma de flor."}
-,{id:"nv30",g:"flr",np:1,n:"Seis flores de cera",i:["nv30"],d:"Pequeña vela de cera en forma de flor."}
-,{id:"nv31",g:"flr",np:1,n:"Seis margaritas de cera",i:["nv31"],d:"Pequeña vela de cera en forma de flor."}
-,{id:"nv32",g:"bol",np:1,n:"Bolsa con flores moradas y crema",i:["nv32"],d:"Velas florales de cera presentadas en bolsa transparente."}
-,{id:"nv33",g:"bol",np:1,n:"Dúo morado y crema",i:["nv33"],d:"Velas florales de cera presentadas en bolsa transparente."}
-,{id:"nv34",g:"com",np:1,n:"Composición pastel de velas florales",i:["nv34"],d:"Platos de exhibición con velas florales de cera de varios colores."}
+,{id:"nv05",g:"vas",np:1,n:"Tres vasos con corazones",i:["nv05"],d:"Vaso transparente con vela de cera y detalles en forma de corazón."}
+,{id:"nv06",g:"vas",np:1,n:"Tres vasos con flores rojas",i:["nv06"],d:"Vasos transparentes con velas de cera roja y flores."}
+,{id:"nv07",g:"vas",np:1,n:"Tres vasos con flores",i:["nv07"],d:"Tres vasos con velas florales vistos desde arriba."}
+,{id:"nv08",g:"vas",np:1,n:"Vaso con corazón azul",i:["nv08"],d:"Vaso transparente con vela de cera y un corazón azul."}
+,{id:"nv09",g:"vas",np:1,n:"Dúo de vasos con corazones",i:["nv09"],d:"Dos vasos transparentes con velas y corazones."}
+,{id:"nv10",g:"vas",np:1,n:"Vasos de corazones",i:["nv10"],d:"Vasos transparentes con velas y corazones de colores."}
+,{id:"nv12",g:"lot",np:1,n:"Loto amarillo",i:["nv12"],d:"Loto de cera amarillo sobre base de exhibición."}
+,{id:"nv14",g:"lot",np:1,n:"Loto rosado",i:["nv14"],d:"Loto de cera rosado sobre base de exhibición."}
+,{id:"nv13",g:"mat",np:1,n:"Loto amarillo en matera",i:["nv13"],d:"Loto de cera amarillo en matera oscura."}
+,{id:"nv26",g:"mat",np:1,n:"Loto rojo en matera",i:["nv26"],d:"Loto de cera rojo en matera blanca."}
+,{id:"nv15",g:"dal",np:1,n:"Dalia roja",i:["nv15"],d:"Dalia de cera roja sobre base de exhibición."}
+,{id:"nv20",g:"dal",np:1,n:"Dalia roja vista de frente",i:["nv20"],d:"Dalia de cera roja vista de frente."}
+,{id:"nv21",g:"dal",np:1,n:"Crisantemo amarillo",i:["nv21"],d:"Crisantemo de cera amarillo sobre base de exhibición."}
+,{id:"nv11",g:"duf",np:1,n:"Dúo rosa y amarillo",i:["nv11"],d:"Dos flores de cera, rosa y amarillo, sobre base de exhibición."}
+,{id:"nv17",g:"duf",np:1,n:"Dúo blanco y verde",i:["nv17"],d:"Dos flores de cera, blanca y verde, sobre base de exhibición."}
+,{id:"nv18",g:"duf",np:1,n:"Dúo blanco y musgo",i:["nv18"],d:"Dos flores de cera, blanca y musgo, sobre base de exhibición."}
+,{id:"nv19",g:"duf",np:1,n:"Dúo rojo y amarillo",i:["nv19"],d:"Dos flores de cera, roja y amarilla, sobre base de exhibición."}
+,{id:"nv33",g:"duf",np:1,n:"Dúo morado y crema",i:["nv33"],d:"Dos flores de cera, morada y crema, sobre base de exhibición."}
+,{id:"nv22",g:"cor",np:1,n:"Tres corazones florales",i:["nv22"],d:"Tres corazones de cera con flores."}
+,{id:"nv23",g:"cor",np:1,n:"Corazón con flor morada",i:["nv23"],d:"Corazón de cera con una flor morada."}
+,{id:"nv24",g:"cor",np:1,n:"Dúo de corazones",i:["nv24"],d:"Dos corazones de cera con flores."}
+,{id:"nv25",g:"pla",np:1,n:"Plato de seis florecitas",i:["nv25"],d:"Plato de exhibición con seis florecitas de cera."}
+,{id:"nv30",g:"pla",np:1,n:"Plato de seis flores",i:["nv30"],d:"Plato de exhibición con seis flores de cera."}
+,{id:"nv31",g:"pla",np:1,n:"Plato de ocho florecitas",i:["nv31"],d:"Plato de exhibición con ocho florecitas de cera."}
+,{id:"nv34",g:"pla",np:1,n:"Tres platos de florecitas",i:["nv34"],d:"Tres platos de exhibición con florecitas de cera."}
+,{id:"nv27",g:"med",np:1,n:"Medallones rojo, amarillo y blanco",i:["nv27"],d:"Tres medallones de cera con flores, en vasito."}
+,{id:"nv28",g:"med",np:1,n:"Medallones rojo, blanco y rojo",i:["nv28"],d:"Tres medallones de cera con flores, en vasito."}
+,{id:"nv29",g:"med",np:1,n:"Medallones amarillo, rojo y morado",i:["nv29"],d:"Tres medallones de cera con flores, en vasito."}
 ];
 var MAT={"g-ramos":"#eef3e8","g-band":"#fbe9ea","g-fig":"#f1f0e4","g-asc":"#fde7df","g-sol":"#fdf2c6","g-mus":"#e3edd8","g-trio":"#fffaf0","g-duo":"#fbe9dc"};
 var $=function(i){return document.getElementById(i)};
@@ -542,7 +536,7 @@ function fg(k){return G.filter(function(x){return x.k==k})[0]}
 function ag(id){return !!SOLD[id]}
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
 function say(t){var l=$("live");if(l)l.textContent=t}
-var EX={nv04:1,nv20:1,nv21:1,nv24:1,nv26:1,nv27:1,nv28:1,nv30:1,nv31:1,nv33:1,nv34:1};function U(k){return k.indexOf("nv")===0?"img/"+k+(EX[k]?".png":".jpg"):"img/i"+k+".jpg"}
+var EX={nv20:1,nv21:1,nv24:1,nv26:1,nv27:1,nv28:1,nv30:1,nv31:1,nv33:1,nv34:1};function U(k){return k.indexOf("nv")===0?"img/"+k+(EX[k]?".png":".jpg"):"img/i"+k+".jpg"}
 function im(k,c){return '<img class="bg" src="'+U(k)+'" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="ft" src="'+U(k)+'" alt="'+esc(c)+'" loading="lazy" decoding="async">'}
 function bigIm(k,c){return '<img class="bg" id="mb" src="'+U(k)+'" alt="" aria-hidden="true" decoding="async"><img class="ft" id="mi" src="'+U(k)+'" alt="'+esc(c)+'" decoding="async">'}
 function setBig(k){$("mi").src=U(k);$("mb").src=U(k)}
@@ -855,6 +849,6 @@ upd();
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",readyNow);else readyNow();
 })();
 </script>
-<style id="imgs">.i01{background-image:url(img/i01.jpg)}.i02{background-image:url(img/i02.jpg)}.i03{background-image:url(img/i03.jpg)}.i04{background-image:url(img/i04.jpg)}.i05e{background-image:url(img/i05e.jpg)}.i06{background-image:url(img/i06.jpg)}.i07{background-image:url(img/i07.jpg)}.i08{background-image:url(img/i08.jpg)}.i09{background-image:url(img/i09.jpg)}.i10{background-image:url(img/i10.jpg)}.i11{background-image:url(img/i11.jpg)}.i12{background-image:url(img/i12.jpg)}.i13{background-image:url(img/i13.jpg)}.i14{background-image:url(img/i14.jpg)}.i15{background-image:url(img/i15.jpg)}.i16{background-image:url(img/i16.jpg)}.i17{background-image:url(img/i17.jpg)}.i19{background-image:url(img/i19.jpg)}.i20{background-image:url(img/i20.jpg)}.i21{background-image:url(img/i21.jpg)}.i22{background-image:url(img/i22.jpg)}.i23{background-image:url(img/i23.jpg)}.i24{background-image:url(img/i24.jpg)}.i25{background-image:url(img/i25.jpg)}.inv01{background-image:url(img/nv01.jpg)}.inv02{background-image:url(img/nv02.jpg)}.inv03{background-image:url(img/nv03.jpg)}.inv04{background-image:url(img/nv04.png)}.inv05{background-image:url(img/nv05.jpg)}.inv06{background-image:url(img/nv06.jpg)}.inv07{background-image:url(img/nv07.jpg)}.inv08{background-image:url(img/nv08.jpg)}.inv09{background-image:url(img/nv09.jpg)}.inv10{background-image:url(img/nv10.jpg)}.inv11{background-image:url(img/nv11.jpg)}.inv12{background-image:url(img/nv12.jpg)}.inv13{background-image:url(img/nv13.jpg)}.inv14{background-image:url(img/nv14.jpg)}.inv15{background-image:url(img/nv15.jpg)}.inv16{background-image:url(img/nv16.jpg)}.inv17{background-image:url(img/nv17.jpg)}.inv18{background-image:url(img/nv18.jpg)}.inv19{background-image:url(img/nv19.jpg)}.inv20{background-image:url(img/nv20.png)}.inv21{background-image:url(img/nv21.png)}.inv22{background-image:url(img/nv22.jpg)}.inv23{background-image:url(img/nv23.jpg)}.inv24{background-image:url(img/nv24.png)}.inv25{background-image:url(img/nv25.jpg)}.inv26{background-image:url(img/nv26.png)}.inv27{background-image:url(img/nv27.png)}.inv28{background-image:url(img/nv28.png)}.inv29{background-image:url(img/nv29.jpg)}.inv30{background-image:url(img/nv30.png)}.inv31{background-image:url(img/nv31.png)}.inv32{background-image:url(img/nv32.jpg)}.inv33{background-image:url(img/nv33.png)}.inv34{background-image:url(img/nv34.png)}.fr .ft,.main .ft,.pn .ft{object-fit:contain}.fr .bg,.main .bg,.pn .bg{object-fit:cover}.fr .ft,.main .ft,.pn .ft,.fr .bg,.main .bg,.pn .bg{display:block;width:100%;height:100%}.fr .bg,.main .bg,.pn .bg{position:absolute;left:-12%;top:-12%;width:124%;height:124%}</style>
+<style id="imgs">.i01{background-image:url(img/i01.jpg)}.i02{background-image:url(img/i02.jpg)}.i03{background-image:url(img/i03.jpg)}.i04{background-image:url(img/i04.jpg)}.i05e{background-image:url(img/i05e.jpg)}.i06{background-image:url(img/i06.jpg)}.i07{background-image:url(img/i07.jpg)}.i08{background-image:url(img/i08.jpg)}.i09{background-image:url(img/i09.jpg)}.i10{background-image:url(img/i10.jpg)}.i11{background-image:url(img/i11.jpg)}.i12{background-image:url(img/i12.jpg)}.i13{background-image:url(img/i13.jpg)}.i14{background-image:url(img/i14.jpg)}.i15{background-image:url(img/i15.jpg)}.i16{background-image:url(img/i16.jpg)}.i17{background-image:url(img/i17.jpg)}.i19{background-image:url(img/i19.jpg)}.i20{background-image:url(img/i20.jpg)}.i21{background-image:url(img/i21.jpg)}.i22{background-image:url(img/i22.jpg)}.i23{background-image:url(img/i23.jpg)}.i24{background-image:url(img/i24.jpg)}.i25{background-image:url(img/i25.jpg)}.inv05{background-image:url(img/nv05.jpg)}.inv06{background-image:url(img/nv06.jpg)}.inv07{background-image:url(img/nv07.jpg)}.inv08{background-image:url(img/nv08.jpg)}.inv09{background-image:url(img/nv09.jpg)}.inv10{background-image:url(img/nv10.jpg)}.inv11{background-image:url(img/nv11.jpg)}.inv12{background-image:url(img/nv12.jpg)}.inv13{background-image:url(img/nv13.jpg)}.inv14{background-image:url(img/nv14.jpg)}.inv15{background-image:url(img/nv15.jpg)}.inv17{background-image:url(img/nv17.jpg)}.inv18{background-image:url(img/nv18.jpg)}.inv19{background-image:url(img/nv19.jpg)}.inv20{background-image:url(img/nv20.png)}.inv21{background-image:url(img/nv21.png)}.inv22{background-image:url(img/nv22.jpg)}.inv23{background-image:url(img/nv23.jpg)}.inv24{background-image:url(img/nv24.png)}.inv25{background-image:url(img/nv25.jpg)}.inv26{background-image:url(img/nv26.png)}.inv27{background-image:url(img/nv27.png)}.inv28{background-image:url(img/nv28.png)}.inv29{background-image:url(img/nv29.jpg)}.inv30{background-image:url(img/nv30.png)}.inv31{background-image:url(img/nv31.png)}.inv33{background-image:url(img/nv33.png)}.inv34{background-image:url(img/nv34.png)}.fr .ft,.main .ft,.pn .ft{object-fit:contain}.fr .bg,.main .bg,.pn .bg{object-fit:cover}.fr .ft,.main .ft,.pn .ft,.fr .bg,.main .bg,.pn .bg{display:block;width:100%;height:100%}.fr .bg,.main .bg,.pn .bg{position:absolute;left:-12%;top:-12%;width:124%;height:124%}</style>
 </body>
 </html>
