@@ -398,6 +398,30 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:30px 20px 110px
 .th .t{padding:0;background-color:transparent}
 .hintn{font-size:13px;color:var(--mut);margin:10px 0 0}
 #duo .grid{grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+html.av-lock{overflow:hidden!important}
+.av{position:fixed;inset:0;z-index:2147483200;display:grid;place-items:center;padding:24px;background:radial-gradient(58% 46% at 50% 0%,color-mix(in srgb,#fde9a8 36%,transparent),transparent 72%),radial-gradient(52% 42% at 92% 96%,color-mix(in srgb,#f7cfd4 30%,transparent),transparent 74%),color-mix(in srgb,var(--bg) 85%,transparent);-webkit-backdrop-filter:blur(16px) saturate(1.05);backdrop-filter:blur(16px) saturate(1.05);overflow:hidden;touch-action:none}
+.av[hidden]{display:none}
+.av::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 44%,color-mix(in srgb,var(--gold) 13%,transparent),transparent 48%);pointer-events:none}
+.av.on{animation:avFade .38s ease both}
+.av.out{animation:avFadeOut .3s ease both}
+.av-c{position:relative;width:min(432px,100%);max-height:calc(100vh - 48px);max-height:calc(100dvh - 48px);overflow:auto;text-align:center;padding:34px 26px 26px;border-radius:26px;border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);outline:1px solid color-mix(in srgb,var(--gold) 16%,transparent);outline-offset:-8px;background:linear-gradient(168deg,var(--sf),color-mix(in srgb,var(--gold) 7%,var(--sf)));box-shadow:0 34px 90px -36px rgba(58,47,42,.55),inset 0 1px 0 rgba(255,255,255,.55);touch-action:pan-y}
+.av.on .av-c{animation:avRise .55s cubic-bezier(.2,.7,.2,1) both}
+.av-orn{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--gold);font-size:12px;margin-bottom:14px}
+.av-orn::before,.av-orn::after{content:"";width:46px;height:1px}
+.av-orn::before{background:linear-gradient(90deg,transparent,var(--gold))}
+.av-orn::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.av-t{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:clamp(27px,7vw,32px);letter-spacing:.02em;color:var(--ink)}
+.av-d{margin:12px 0 22px;font-size:15.5px;line-height:1.75;color:var(--ink)}
+.av-d b{color:var(--gold);font-weight:600}
+.av-b{display:block;width:100%;padding:15px 22px;border-radius:99px;background:var(--ink);color:var(--bg);font:500 14px/1 Lora,Georgia,serif;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 14px 30px -14px rgba(58,47,42,.6);transition:transform .25s ease,box-shadow .25s ease}
+.av-b:hover{transform:translateY(-1px);box-shadow:0 18px 36px -16px rgba(58,47,42,.65)}
+.av-b:active{transform:translateY(0) scale(.99)}
+.av-lock .fx i,.av-lock .fx b,.av-lock .fx u,.av-lock .deliv::after,.av-lock .hero::before{animation-play-state:paused}
+@keyframes avFade{from{opacity:0}to{opacity:1}}
+@keyframes avFadeOut{from{opacity:1}to{opacity:0}}
+@keyframes avRise{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+@media (max-width:640px){.av{background:radial-gradient(58% 46% at 50% 0%,color-mix(in srgb,#fde9a8 36%,transparent),transparent 72%),radial-gradient(52% 42% at 92% 96%,color-mix(in srgb,#f7cfd4 30%,transparent),transparent 74%),color-mix(in srgb,var(--bg) 94%,transparent);-webkit-backdrop-filter:none;backdrop-filter:none}}
+@media (prefers-reduced-motion:reduce){.av.on,.av.on .av-c,.av.out{animation-duration:.01s}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -425,6 +449,14 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:30px 20px 110px
 <button class="fab" id="fab" aria-label="Abrir mi pedido">Mi pedido · <span id="cnt" aria-live="polite">0</span></button>
 <div class="ov" id="o1"><div class="sh" id="s1" role="dialog" aria-modal="true" aria-label="Detalle del producto"></div></div>
 <div class="ov" id="o2"><div class="sh" id="s2" role="dialog" aria-modal="true" aria-label="Mi pedido"></div></div>
+<div class="av" id="av" hidden>
+  <div class="av-c" role="dialog" aria-modal="true" aria-labelledby="av-t" aria-describedby="av-d">
+    <div class="av-orn" aria-hidden="true">✦</div>
+    <h2 class="av-t" id="av-t">Aviso</h2>
+    <p class="av-d" id="av-d">Todos los productos que se muestran en esta página web se hacen a pedido debido a la alta rotación de mercado. Por favor, pedir con <b>4 o más días de antelación</b>.</p>
+    <button class="av-b" id="avb" type="button">Entendido</button>
+  </div>
+</div>
 
 <script>
 var CFG={name:"Velas Renacer By Ale",phone:"573208054657"};
@@ -723,6 +755,52 @@ $("fab").onclick=function(){drawCart();openOv("o2")};
   paint()})();
 (function(){try{var d={"@context":"https://schema.org","@type":"ItemList","name":"Catálogo de Velas Renacer By Ale","itemListElement":P.filter(function(p){return !p.hid}).map(function(p,i){return {"@type":"ListItem","position":i+1,"item":{"@type":"Product","name":p.n,"description":p.d,"category":fg(p.g).t,"brand":{"@type":"Brand","name":CFG.name},"offers":{"@type":"Offer","price":p.p,"priceCurrency":"COP","availability":ag(p.id)?"https://schema.org/OutOfStock":"https://schema.org/InStock"}}}})};var s=document.createElement("script");s.type="application/ld+json";s.textContent=JSON.stringify(d);document.head.appendChild(s)}catch(e){}})();
 upd();
+(function(){
+  var av=document.getElementById("av"),btn=document.getElementById("avb"),html=document.documentElement;
+  if(!av||!btn)return;
+  var tShow=0,shown=false,closed=false,mo=null;
+  function lock(on){if(on)html.classList.add("av-lock");else html.classList.remove("av-lock")}
+  function trap(e){if(e.key==="Tab"){e.preventDefault();btn.focus()}}
+  function show(){
+    if(shown||closed)return;shown=true;
+    av.hidden=false;lock(true);av.classList.add("on");
+    document.addEventListener("keydown",trap,true);
+    setTimeout(function(){try{btn.focus()}catch(err){}},140);
+  }
+  function schedule(){clearTimeout(tShow);tShow=setTimeout(show,3500)}
+  function watch(){
+    if(shown||closed)return;
+    if(window.MutationObserver){
+      mo=new MutationObserver(function(){
+        if(!document.querySelector(".ri-overlay")){mo.disconnect();mo=null;schedule()}
+      });
+      mo.observe(document.body,{childList:true});
+      setTimeout(function(){if(mo){mo.disconnect();mo=null;if(!document.querySelector(".ri-overlay"))schedule()}},14500);
+    }else{
+      var iv=setInterval(function(){if(!document.querySelector(".ri-overlay")){clearInterval(iv);schedule()}},250);
+    }
+  }
+  function ready(){
+    if(shown||closed)return;
+    var tries=0;
+    (function wait(){
+      if(shown||closed)return;
+      if(document.querySelector(".ri-overlay")){watch();return}
+      if(tries++<4){setTimeout(wait,120);return}
+      schedule();
+    })();
+  }
+  btn.addEventListener("click",function(){
+    if(closed)return;closed=true;
+    clearTimeout(tShow);
+    av.classList.remove("on");av.classList.add("out");
+    lock(false);
+    document.removeEventListener("keydown",trap,true);
+    try{btn.blur()}catch(err){}
+    setTimeout(function(){av.hidden=true;av.classList.remove("out")},320);
+  });
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();
+})();
 </script>
 <style id="imgs">.i01{background-image:url(img/i01.jpg)}.i02{background-image:url(img/i02.jpg)}.i03{background-image:url(img/i03.jpg)}.i04{background-image:url(img/i04.jpg)}.i05e{background-image:url(img/i05e.jpg)}.i06{background-image:url(img/i06.jpg)}.i07{background-image:url(img/i07.jpg)}.i08{background-image:url(img/i08.jpg)}.i09{background-image:url(img/i09.jpg)}.i10{background-image:url(img/i10.jpg)}.i11{background-image:url(img/i11.jpg)}.i12{background-image:url(img/i12.jpg)}.i13{background-image:url(img/i13.jpg)}.i14{background-image:url(img/i14.jpg)}.i15{background-image:url(img/i15.jpg)}.i16{background-image:url(img/i16.jpg)}.i17{background-image:url(img/i17.jpg)}.i19{background-image:url(img/i19.jpg)}.i20{background-image:url(img/i20.jpg)}.i21{background-image:url(img/i21.jpg)}.i22{background-image:url(img/i22.jpg)}.i23{background-image:url(img/i23.jpg)}.i24{background-image:url(img/i24.jpg)}.i25{background-image:url(img/i25.jpg)}.fr .ft,.main .ft,.pn .ft{object-fit:contain}.fr .bg,.main .bg,.pn .bg{object-fit:cover}.fr .ft,.main .ft,.pn .ft,.fr .bg,.main .bg,.pn .bg{display:block;width:100%;height:100%}.fr .bg,.main .bg,.pn .bg{position:absolute;left:-12%;top:-12%;width:124%;height:124%}</style>
 </body>
