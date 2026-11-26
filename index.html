@@ -347,6 +347,8 @@ nav a.on{color:var(--ink)}nav a.on::after{width:50%}
 .g-band .fr{border-radius:30px;outline:1px solid var(--gold);outline-offset:-9px}
 .g-fig{--g1:#e4ebd9;--g2:#fdf2e2;--ac:#6f7f52;--mat:#f1f0e4;--sh:#93a374;--lx:62%}
 .g-fig .fr{border-radius:50% 50% 16px 16px/24% 24% 16px 16px;outline:1px solid var(--gold);outline-offset:-9px}
+.g-bqe{--g1:#f3e7d3;--g2:#fdf6e8;--ac:#8a6a3a;--mat:#faf2e4;--sh:#d6bc8e;--lx:50%}
+.g-bqe .fr{border-radius:50% 50% 14px 14px/26% 26% 14px 14px}
 #fig .grid{grid-template-columns:repeat(auto-fit,minmax(200px,270px));justify-content:center;gap:30px 34px}
 @media (min-width:1000px){#fig .grid{grid-template-columns:repeat(4,minmax(0,225px));gap:30px 24px}}
 @media (max-width:560px){#fig .grid{grid-template-columns:1fr}}
@@ -479,7 +481,7 @@ var G=[
 {k:"ramos",t:"Ramos de luz",l:"Del frío del invierno también brotan flores.",c:"g-ramos"},
 {k:"band",t:"Bandejas del bosque",l:"En cada rincón, un pequeño bosque despierta.",c:"g-band"},
 {k:"fig",t:"Pequeños del bosque",l:"Pequeñas figuras que guardan su propia llama.",c:"g-fig"},
-{k:"vas",t:"Vasos de luz",l:"Vaso transparente, una vela y una llama.",c:"g-trio"},{k:"cor",t:"Corazones de cera",l:"Corazones de cera con flores.",c:"g-trio"},{k:"lot",t:"Lotos en flor",l:"Una flor de loto, una llama que renace.",c:"g-trio"},{k:"duf",t:"Dúos florales",l:"Dos flores, dos llamas, un mismo regalo.",c:"g-trio"},{k:"pla",t:"Platos en flor",l:"Florecitas pequeñas reunidas en un plato.",c:"g-trio"}];
+{k:"vas",t:"Vasos de luz",l:"Vaso transparente, una vela y una llama.",c:"g-trio"},{k:"cor",t:"Corazones de cera",l:"Corazones de cera con flores.",c:"g-trio"},{k:"lot",t:"Lotos en flor",l:"Una flor de loto, una llama que renace.",c:"g-trio"},{k:"duf",t:"Dúos florales",l:"Dos flores, dos llamas, un mismo regalo.",c:"g-trio"},{k:"pla",t:"Platos en flor",l:"Florecitas pequeñas reunidas en un plato.",c:"g-trio"},{k:"bqe",t:"Bouquets de ensueño",l:"Tres bouquets, tres formas de regalar luz.",c:"g-bqe"}];
 var P=[
 {id:"r1",g:"ramos",n:"Bouquet de velas navideño oso farol",p:25000,i:["06"],d:"Un farol de oso resguarda la llama entre bayas rojas y detalles dorados, como un refugio de invierno. Cuando la cera se consume, la pieza no se apaga del todo: renace como candelabro.",f:"✦ Bouquet de doble función: una vez terminadas las velas, la base se puede utilizar como candelabro para decoraciones."},
 {id:"r2",g:"ramos",n:"Bouquet de velas navideño venado farol",p:25000,i:["04"],d:"Un farol de venado sostiene la luz entre flores secas y varillas doradas, como un bosque que aguarda su aurora. Al terminar la cera, la base vuelve a empezar como candelabro.",f:"✦ Bouquet de doble función: una vez terminadas las velas, la base se puede utilizar como candelabro para decoraciones."},
@@ -506,9 +508,11 @@ var P=[
 ,{id:"nv33",g:"duf",n:"Vela flor para pebetero morado y crema",p:5000,i:["nv33"],d:"Empaque de 2 unidades."}
 
 ,{id:"nv34",g:"pla",nt:"Venta exclusiva de 3 paquetes, cada paquete contiene 6 unidades",n:"Wax melts frutos rojos",p:12000,i:["nv34"],d:"Tres paquetes de wax melts frutos rojos, 6 unidades cada uno.",f:"✦ Cada base es un paquete, es decir, la imagen ilustrativa es todo el contenido por el que se paga."}
-,{id:"nv35",g:"ramos",n:"Bouquete floral de velas",p:65000,i:["nv35"],d:"Bouquete grande de velas con un osito morado, rosas lilas, flores azules y una margarita blanca, sobre base blanca con gasa lila. Viene con un aproximado de 8 velas."}
+,{id:"nv35",g:"bqe",n:"Bouquete floral de velas",p:65000,i:["nv35"],d:"Bouquete grande de velas con un osito morado, rosas lilas, flores azules y una margarita blanca, sobre base blanca con gasa lila. Viene con un aproximado de 8 velas."}
+,{id:"nv36",g:"bqe",n:"Bouquete de la Virgen",p:65000,i:["nv36"],d:"Bouquete de velas con figura de la Virgen al centro, flores de cera amarillas y blancas y detalles verdes, envuelto en gasa menta."}
+,{id:"nv37",g:"bqe",n:"Bouquete de la Virgen rosado",p:65000,i:["nv37"],d:"Bouquete de velas con figura de la Virgen al centro, rosas y flores de cera rosadas y blancas, envuelto en papel rosado con detalles dorados."}
 ];
-var MAT={"g-ramos":"#eef3e8","g-band":"#fbe9ea","g-fig":"#f1f0e4","g-asc":"#fde7df","g-sol":"#fdf2c6","g-mus":"#e3edd8","g-trio":"#fffaf0","g-duo":"#fbe9dc"};
+var MAT={"g-ramos":"#eef3e8","g-band":"#fbe9ea","g-fig":"#f1f0e4","g-asc":"#fde7df","g-sol":"#fdf2c6","g-mus":"#e3edd8","g-trio":"#fffaf0","g-bqe":"#faf2e4","g-duo":"#fbe9dc"};
 var $=function(i){return document.getElementById(i)};
 var cart={};try{cart=JSON.parse(localStorage.getItem("lr")||"{}")||{}}catch(e){}
 function sv(){try{localStorage.setItem("lr",JSON.stringify(cart))}catch(e){}}
@@ -835,6 +839,6 @@ upd();
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",readyNow);else readyNow();
 })();
 </script>
-<style id="imgs">.i01{background-image:url(img/i01.jpg)}.i02{background-image:url(img/i02.jpg)}.i03{background-image:url(img/i03.jpg)}.i04{background-image:url(img/i04.jpg)}.i05e{background-image:url(img/i05e.jpg)}.i06{background-image:url(img/i06.jpg)}.i22{background-image:url(img/i22.jpg)}.i23{background-image:url(img/i23.jpg)}.i24{background-image:url(img/i24.jpg)}.i25{background-image:url(img/i25.jpg)}.inv05{background-image:url(img/nv05.jpg)}.inv06{background-image:url(img/nv06.jpg)}.inv11{background-image:url(img/nv11.jpg)}.inv12{background-image:url(img/nv12.jpg)}.inv14{background-image:url(img/nv14.jpg)}.inv17{background-image:url(img/nv17.jpg)}.inv18{background-image:url(img/nv18.jpg)}.inv19{background-image:url(img/nv19.jpg)}.inv22{background-image:url(img/nv22.jpg)}.inv33{background-image:url(img/nv33.png)}.inv34{background-image:url(img/nv34.png)}.inv35{background-image:url(img/nv35.jpg)}.fr .ft,.main .ft,.pn .ft{object-fit:contain}.fr .bg,.main .bg,.pn .bg{object-fit:cover}.fr .ft,.main .ft,.pn .ft,.fr .bg,.main .bg,.pn .bg{display:block;width:100%;height:100%}.fr .bg,.main .bg,.pn .bg{position:absolute;left:-12%;top:-12%;width:124%;height:124%}</style>
+<style id="imgs">.i01{background-image:url(img/i01.jpg)}.i02{background-image:url(img/i02.jpg)}.i03{background-image:url(img/i03.jpg)}.i04{background-image:url(img/i04.jpg)}.i05e{background-image:url(img/i05e.jpg)}.i06{background-image:url(img/i06.jpg)}.i22{background-image:url(img/i22.jpg)}.i23{background-image:url(img/i23.jpg)}.i24{background-image:url(img/i24.jpg)}.i25{background-image:url(img/i25.jpg)}.inv05{background-image:url(img/nv05.jpg)}.inv06{background-image:url(img/nv06.jpg)}.inv11{background-image:url(img/nv11.jpg)}.inv12{background-image:url(img/nv12.jpg)}.inv14{background-image:url(img/nv14.jpg)}.inv17{background-image:url(img/nv17.jpg)}.inv18{background-image:url(img/nv18.jpg)}.inv19{background-image:url(img/nv19.jpg)}.inv22{background-image:url(img/nv22.jpg)}.inv33{background-image:url(img/nv33.png)}.inv34{background-image:url(img/nv34.png)}.inv35{background-image:url(img/nv35.jpg)}.inv36{background-image:url(img/nv36.jpg)}.inv37{background-image:url(img/nv37.jpg)}.fr .ft,.main .ft,.pn .ft{object-fit:contain}.fr .bg,.main .bg,.pn .bg{object-fit:cover}.fr .ft,.main .ft,.pn .ft,.fr .bg,.main .bg,.pn .bg{display:block;width:100%;height:100%}.fr .bg,.main .bg,.pn .bg{position:absolute;left:-12%;top:-12%;width:124%;height:124%}</style>
 <script>(function(){var a=document.getElementById("bgm");if(!a)return;a.volume=.9;a.loop=true;function go(){if(a.paused){var r=a.play();if(r&&r.catch)r.catch(function(){})}}go();setTimeout(go,1200);["pointerdown","touchend","click","keydown"].forEach(function(e){document.addEventListener(e,go,{passive:true})});a.addEventListener("ended",go);if(window.MutationObserver){new MutationObserver(function(){if(!document.documentElement.classList.contains("ri-lock"))go()}).observe(document.documentElement,{attributes:true,attributeFilter:["class"]})}})();</script></body>
 </html>
